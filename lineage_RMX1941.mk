@@ -18,8 +18,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit some common Aosp stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common LineageOS stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from RMX1941 device makefile
 $(call inherit-product, device/realme/RMX1941/device.mk)
@@ -33,7 +33,7 @@ TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX1941
-PRODUCT_NAME := aosp_RMX1941
+PRODUCT_NAME := lineage_RMX1941
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C2
 PRODUCT_MANUFACTURER := realme
@@ -51,3 +51,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+# FaceLock
+TARGET_FACE_UNLOCK_SUPPORTED := true
